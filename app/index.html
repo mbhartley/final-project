@@ -43,13 +43,15 @@
                     <img src="/images/teacher.png" class="teacher-icon">
                     <br>
                     <br>
+
                     <h2>Instructors</h2>
                     <p class="summary">American Apparel aesthetic craft beer Intellect yum. Fap Tumblr flexitarian, Shoreditch Cosby sweater gluten-free Bushwick seitan pickled. Before they sold out Vice Tumblr Wes Anderson tattooed single-origin coffee High Life.</p>
                     <br>
-                    <button type="button" class="btn btn-default" class="instructor-login">Login</button>
+                    <button type="button" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>
                     <br>
                     <br>
-                    <div class="register">New Instructor? <button type="button" data-toggle="modal" data-target=".js-instr-reg-modal">Register Now</button></div> 
+                    <div class="register">New Instructor?</div> 
+                    <button type="button" data-toggle="modal" data-target=".js-instr-reg-modal">Register Now</button> 
                 </div>
                 <div class="col-lg-6">
                     <img src="/images/teacher.png" class="teacher-icon">
@@ -65,7 +67,7 @@
                 </div>
             </div>    
         </div>
-        <!--Registration Modal-->
+        <!--Instructor Registration Modal-->
         <div class="modal fade js-instr-reg-modal">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -73,31 +75,52 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Thank you for registering as an Instructor!</h4>
               </div>
-              <div class="modal-body">
-
-
+              <div class="modal-body register-modal-body">
                 <div class="create-username">
                   <label class="control-label" for="inputError1">Create a New Username</label>
                   <div class="error-message"></div>
                   <input type="text" class="form-control js-instructor-username" id="inputError1">
                 </div>
-
                 <div class="create-password">
                   <label class="control-label" for="inputError1">Create a Password</label>
                   <input type="text" class="form-control js-instructor-password" id="inputError1">
                 </div>
-
                 <div class="create-email">
                   <label class="control-label" for="inputError1">Enter Your Email Address</label>
                   <input type="text" class="form-control js-instructor-email" id="inputError1">
-                </div>
-
-  
+                </div>  
               </div>
-
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="save-instructor-registration">Save</button>
+                <button type="button" class="btn btn-default js-close-instructor-registration" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary js-save-instructor-registration">Save</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!--Instructor Login Modal-->
+        <div class="modal fade js-instr-login-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Welcome to Platform!<br>Enter your username and password below.</h4>
+              </div>
+              <div class="modal-body">
+                <div class="enter-username">
+                  <label class="control-label" for="inputError1">Enter Username</label>
+                  <div class="error-message"></div>
+                  <input type="text" class="form-control js-instructor-login-username" id="inputError1">
+                </div>
+                <div class="enter-password">
+                  <label class="control-label" for="inputError1">Enter Password</label>
+                  <input type="text" class="form-control js-instructor-login-password" id="inputError1">
+                  <div class="login-error-message"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default js-close-instructor-login" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary js-instructor-login">Login</button>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
