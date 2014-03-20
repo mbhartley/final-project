@@ -17,7 +17,7 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
 
@@ -47,7 +47,7 @@
                     <h2>Instructors</h2>
                     <p class="summary">American Apparel aesthetic craft beer Intellect yum. Fap Tumblr flexitarian, Shoreditch Cosby sweater gluten-free Bushwick seitan pickled. Before they sold out Vice Tumblr Wes Anderson tattooed single-origin coffee High Life.</p>
                     <br>
-                    <button type="button" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>
+                        <button type="button" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>                   
                     <br>
                     <br>
                     <div class="register">New Instructor?</div> 
@@ -119,12 +119,28 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default js-close-instructor-login" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary js-instructor-login">Login</button>
+                  <button type="button" class="btn btn-default js-close-instructor-login" data-dismiss="modal">Close</button> 
+                  <a href="#instructorPage">                
+                  <button type="button" class="btn btn-primary js-instructor-login">Login
+                  </button>  
+                  </a>               
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
+        <!--Templates-->
+
+        <!--Instructor View Templates-->
+
+        <!--Welcome Template-->
+        <script type="text/template" id="welcome-instructor-template">
+        <h2>Welcome, <%=username%> </h2>
+        </script>
+        
+
+
+        
             
            
 
@@ -165,7 +181,11 @@
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/landing-page-view.js"></script>
+        <script src="scripts/router.js"></script>
+        <script src="scripts/views/instructor-view.js"></script>
+        <script src="scripts/views/student-view.js"></script>
+        <script src="scripts/views/create-project-view.js"></script>
+        <script src="scripts/views/collaboration-view.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

@@ -2,6 +2,10 @@ $(function(){
 
   Parse.initialize("wRZ1tP8WGEzVkIIcDZHWOQyb6hXAHcIe1bYtyxb0", "LsSHeEh1sK899IlTAtzCOlM86oCppYeuCUYIt5oR");
 
+  window.router = new Router();
+
+  Backbone.history.start();
+
 }),
 
 //Instructor Registration, on click of 'save' button in registration modal
@@ -54,9 +58,13 @@ $('.js-instructor-login').click(function(){
   //pass those values in as parameters of the Parse login method
   Parse.User.logIn(instructorName, instructorPassword, {
       success: function(user) {
-      	console.log('successful login')
-        //on successful login, the Instructor user will be taken to the Teacher View page; alert is temporary
-        alert('Login Successful. Click OK')
+      	console.log('successful login');
+      	/*on successful login, the Instructor user will be taken to the Teacher View page; I don't believe
+      	that instantiating the InstructorView on this success callback is the best way of doing things, but
+      	i cannot get a route to fire to otherwise instantiate the InstructorView*/
+        //alert('Login Successful. Click OK')
+      	$('.js-instr-login-modal').modal('hide');
+      	//new InstructorView();
       },
       error: function(user, error) {
       	console.log(error)
