@@ -16,7 +16,7 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: 'Source Sans Pro', sans-serif;
-    color: rgb(37, 37, 38);
+    color: rgb(51, 51, 51);
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -30,6 +30,7 @@ body {
 /* Custom page header */
 .header {
     border-bottom: 1px solid #e5e5e5;
+
 
     /* Make the masthead heading the same height as the navigation */
     h3 {
@@ -95,33 +96,45 @@ body {
 }
 //BOOTSTRAP DEFAULT ENDS
 
+h1 {
+    color: rgb(66, 139, 202);
+    font-weight: 700;
+}
+
 .welcome {
     font-size: 20px;
 }
 
 .logo {
-    font-size: 62px;
-    text-align: center;
+    position: relative;
+}
+
+.logo-img {
+    width: 320px;
+    display: inline-block;
 }
 
 .tagline {
-    font-size: 20px;
+    font-size: 24px;
     text-align: right;
+    display: inline-block;
+    color: rgb(66, 139, 202);
 }
 
-.teacher-icon {
-    width: 120px;
+.user-icon {
+    width: 140px;
 }
 
 .btn {
-    width: 80px;
+    width: 124px;
     height: 28px;
     border-radius: 4px;
     line-height: 100%;
+    box-shadow: 1px 1px 1px rgb(51, 51, 51);
 }
 
 .summary{
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .register {
@@ -135,4 +148,22 @@ body {
 .login-error-message {
     color: red;
 }
+
+.project-pane {
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+}
+
+.create-new-project-header {
+    width: 600px;
+    margin: 0 auto;
+}
+.create-new-project-pane {
+    width: 600px;
+    margin: 0 auto; 
+    padding-top: 28px;
+}
+
+
 

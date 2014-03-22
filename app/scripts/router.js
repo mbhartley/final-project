@@ -5,7 +5,7 @@ var Router = Backbone.Router.extend({
 		''                  			  : 'home',
 		'instructorPage'    			  : 'instructorPage',
 		'studentPage'       			  : 'studentPage',
-		'instructorPage/:createNewProject': 'sortEvents',
+		'instructorPage/createNewProject': 'createNewProjectPage',
 		'instructorPage/:collaboration'   : 'collaborationPage',
 		'studentPage/: viewProjectPage'   : 'viewProjectPage',
 		'studentPage/: collaboration'	  : 'collaborationPage',
@@ -16,15 +16,18 @@ var Router = Backbone.Router.extend({
 		console.log('Hey guys, unto us a router is born!')
 	},
 
-	home: function(){
-		console.log('im HOME!');
-	},
-
 	instructorPage: function(){
 	    console.log('isntructorPage firing away!')
-	    $('body').empty();
   	    new InstructorView();
     },
+
+    createNewProjectPage: function(){
+    	console.log('createNewProjectPage is ON FIRE!')
+    	new CreateProjectView();
+    }
+
+    
+
 
     
 

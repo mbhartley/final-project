@@ -51,7 +51,6 @@ $('.js-close-instructor-registration').click(function(){
 
 //Instructor Login, on click of 'Login' button in login modal
 $('.js-instructor-login').click(function(){
-	console.log('Instructor Login is Firing!')
 	//capture the values of user inputs from login modal
 	var instructorName = $('.js-instructor-login-username').val();
 	var instructorPassword = $('.js-instructor-login-password').val();
@@ -59,12 +58,9 @@ $('.js-instructor-login').click(function(){
   Parse.User.logIn(instructorName, instructorPassword, {
       success: function(user) {
       	console.log('successful login');
-      	/*on successful login, the Instructor user will be taken to the Teacher View page; I don't believe
-      	that instantiating the InstructorView on this success callback is the best way of doing things, but
-      	i cannot get a route to fire to otherwise instantiate the InstructorView*/
-        //alert('Login Successful. Click OK')
+      	/*on successful login: fire the instructorPage route and hide the modal*/
+      	window.router.navigate("instructorPage", {trigger: true});
       	$('.js-instr-login-modal').modal('hide');
-      	//new InstructorView();
       },
       error: function(user, error) {
       	console.log(error)
@@ -78,12 +74,43 @@ $('.js-instructor-login').click(function(){
 /*clear the value of all input fields when closing the login modal, but still need to find a way to clear
 the error message if user closes the modal after error message is received*/
 $('.js-close-instructor-login').click(function(){
-	console.log('clear login fields firing');
 	$('.js-instructor-login-username').val('');
 	$('.js-instructor-login-password').val('');
+});
+
+
+
+$(function(){
+
+$('.js-save-new-project').click(function(){
+  console.log('anything?????');
+  var project = new Project();
+  
+  var projectName = $('.js-project-name').val();
+  var projectDescription = $('.js-project-description').val();
+  var projectDueDate = $('.js-project-due-date').val();
+  var projectInstructions = $('.js-project-instructions').val();
+
+  project.set('projectName', projectName);
+  project.set('projectDescription', projectDescription);
+  project.set('projectDueDate', projectDueDate);
+  project.set('projectInstructions', projectInstructions);
+
+  project.save(null, {
+    success: function(gameScore) {
+    // Execute any logic that should take place after the object is saved.
+      alert('New object created with objectId: ' + project.id);
+    },
+    error: function(gameScore, error) {
+    // Execute any logic that should take place if the save fails.
+    // error is a Parse.Error with an error code and description.
+    alert('Failed to create new object, with error code: ' + error.description);
+    }
+  });
+
+});
+
 })
-
-
 
 
 	
