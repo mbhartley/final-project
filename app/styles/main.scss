@@ -17,10 +17,11 @@ body {
     padding-bottom: 20px;
     font-family: 'Source Sans Pro', sans-serif;
     color: rgb(51, 51, 51);
+    background-color: rgb(227, 232, 237);
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
+
 .marketing,
 .footer {
     padding-left: 15px;
@@ -29,51 +30,26 @@ body {
 
 /* Custom page header */
 .header {
-    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    box-shadow: 0px 2px 2px 2px;
+    background-color: rgb(42,88,127);
+    background: rgb(178,178,178); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%, rgba(42,88,127,1) 64%, rgba(5,43,96,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(178,178,178,1)), color-stop(64%,rgba(42,88,127,1)), color-stop(100%,rgba(5,43,96,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2b2b2', endColorstr='#052b60',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-
-    /* Make the masthead heading the same height as the navigation */
-    h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 40px;
-        padding-bottom: 19px;
-    }
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-    }
-}
-
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-    p + h4 {
-        margin-top: 28px;
-    }
-}
-
-/* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        //background-color: rgb(197, 200, 204);
+        max-width: 900px;
+        height: 620px;
+        border-radius: 8px;
     }
 
     /* Remove the padding we set earlier */
@@ -84,21 +60,19 @@ body {
         padding-right: 0;
     }
 
-    /* Space out the masthead */
     .header {
-        margin-bottom: 30px;
+        //margin-bottom: 10px;
+        height: 200px;
+        margin-top: 26px;
     }
     
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
 }
 //BOOTSTRAP DEFAULT ENDS
 
 h1 {
-    color: rgb(66, 139, 202);
+    color: rgb(79, 112, 141);
     font-weight: 700;
+    text-align: center;
 }
 
 .welcome {
@@ -110,19 +84,28 @@ h1 {
 }
 
 .logo-img {
-    width: 320px;
-    display: inline-block;
+    width: 440px;
+    position: absolute;
+    top: 0;
+    margin-left: 486px;
 }
 
 .tagline {
-    font-size: 24px;
-    text-align: right;
-    display: inline-block;
-    color: rgb(66, 139, 202);
+    font-size: 27px;
+    color: white;
+    display: inline-flex;
+    margin-left: 44px;
 }
 
 .user-icon {
-    width: 140px;
+    width: 150px;
+    margin-left: 130px;
+    opacity: 0.7;
+    
+}
+
+.btn-primary {
+    background-color: rgb(79, 112, 141);
 }
 
 .btn {
@@ -131,6 +114,10 @@ h1 {
     border-radius: 4px;
     line-height: 100%;
     box-shadow: 1px 1px 1px rgb(51, 51, 51);
+}
+
+.login-button {
+    margin-left: 144px;
 }
 
 .summary{
@@ -163,6 +150,11 @@ h1 {
     width: 600px;
     margin: 0 auto; 
     padding-top: 28px;
+}
+
+.panel-heading  {
+    font-size: 20px;
+    text-align: center;
 }
 
 

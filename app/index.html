@@ -19,57 +19,58 @@
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
-
     </head>
     <body>
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <div class="container"> 
 
-          <div class="logo">
-            <img class="logo-img" src="/images/platform.jpg">
-            <div class="tagline">A simple project-based,<br>collaborative learning environment</div>
-          </div>
+        <!--Home Page Template, including modals for login and registration-->
+
+    <script type="text/template" id="home-page-template">
+
+        <div class="header">
+          <img class="logo-img" src="/images/platform.gif"> 
+        </div>
+          
+        <div class="container"> 
           <br>
           <br>
           <br>
           <br>
-          <!--Main section containing login for instructor and login for student-->
+          <br>
+          <br>
           <div class="login-icons-viewer">
             <!--Instructor Login-->
             <div class="col-lg-6">
-              <img src="/images/teacher.jpg" class="user-icon">
+              <img src="/images/teacher.png" class="user-icon">
               <br>
               <br>
+            <!--Instructor Login-->  
               <h1>Instructors</h1>
               <p class="summary">American Apparel aesthetic craft beer Intellect yum. Fap Tumblr flexitarian, Shoreditch Cosby sweater gluten-free Bushwick seitan pickled.</p>
               <br>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>                
+              <button type="button" class="btn btn-primary login-button" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>                
               <br>
-              <br>
-              <div class="register">New Instructor?</div> 
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".js-instr-reg-modal">Register Now</button> 
+              <br>     
+              <button type="button" class="btn btn-primary login-button" data-toggle="modal" data-target=".js-instr-reg-modal">Register Now</button> 
             </div>
             <!--Student Login-->
             <div class="col-lg-6">
-              <img src="/images/student.jpg" class="user-icon">
+              <img src="/images/teacher.png" class="user-icon">
               <br>
               <br>
               <h1>Students</h1>
               <p class="summary">American Apparel aesthetic craft beer Intellect yum. Fap Tumblr flexitarian, Shoreditch Cosby sweater gluten-free Bushwick seitan pickled.</p>
               <br>
-              <button type="button" class="btn btn-primary">Student Login</button>
+              <button type="button" class="btn btn-primary login-button">Student Login</button>
               <br>
               <br>
-              <div class="register">Or register <a>here</a></div>
+              <button type="button" class="btn btn-primary login-button" data-toggle="modal">Register Now</button>           
             </div>
-
           </div> 
-
         </div>
-        <!--Instructor Registration Modal-->
+
         <div class="modal fade js-instr-reg-modal">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -100,7 +101,7 @@
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <!--Instructor Login Modal-->
+        
         <div class="modal fade js-instr-login-modal">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -128,22 +129,24 @@
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
-        <!--Templates-->
+    </script>
 
         <!--Instructor View Templates-->
-
-        <div class="welcome"></div>
         <script type="text/template" id="welcome-instructor-template">
-            <div class="welcome">Welcome, (username)</div>
-            <button type="button" class="btn btn-primary">LogOut</button>
-            <a href="#instructorPage/createNewProject"><button type="button" class="btn btn-primary">Create New Project</button></a>
-            <div class="project-pane"></div>
+          <div class="welcome">Welcome, (username)</div>
+          <button type="button" class="btn btn-primary">LogOut</button>
+          <a href="#instructorPage/createNewProject"><button type="button" class="btn btn-primary">Create New Project</button></a>
+          <div class="project-pane">
+          <div class="project-thumbnails">
+
+          </div>
+          </div>
         </script>
 
         <!--Create Project View Template-->
         <script type="text/template" id="create-new-project-template">
         <div class="panel panel-primary create-new-project-header">
-          <div class="panel-heading">Instructions go here</div>
+          <div class="panel-heading">Welcome to Platform Create a Project Page</div>
         </div>
         <form role="form" class="create-new-project-pane">
           <div class="form-group">
@@ -164,29 +167,11 @@
             <label for="exampleInputFile">File input</label>
             <input type="file" id="exampleInputFile">
             <p class="help-block">Example block-level help text here.</p>
-          </div>
-          
+          </div>          
           <button type="button" class="btn btn-primary js-save-new-project">Save</button>
         </form>
 
         </script>
-
-
-
-
-
-        
-
-        
-        
-
-
-        
-            
-           
-
-        
-
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
@@ -223,7 +208,7 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/router.js"></script>
-        <script src="scripts/views/home-view.js"></script>
+        <script src="scripts/views/home-page-view.js"></script>
         <script src="scripts/views/instructor-view.js"></script>
         <script src="scripts/views/student-view.js"></script>
         <script src="scripts/views/create-project-view.js"></script>
