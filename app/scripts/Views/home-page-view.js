@@ -55,7 +55,6 @@ var HomePageView = Parse.View.extend({
 	  success: function(user) {
 	    //on success, navigate away from page to instructorPage
 		router.navigate("instructorPage", {trigger: true});
-		// this.destroy();
 	  },
 
 	  error: function(user, error) {

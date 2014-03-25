@@ -133,12 +133,29 @@
 
         <!--Instructor View Templates-->
         <script type="text/template" id="projects">
+        <div class="container">
+        <div class="panel panel-primary create-new-project-header">
+          <div class="panel-heading">Welcome to Platform Create a Project Page</div>
+        </div>
           <div class="welcome">Welcome, (username)</div>
-          <button type="button" class="btn btn-primary">LogOut</button>
+          <button type="button" class="btn btn-primary instructor-logout">LogOut</button>
           <a href="#instructorPage/createNewProject"><button type="button" class="btn btn-primary">Create New Project</button></a>
           <div class="project-pane">
           <div class="project-thumbnails">
             <%= model.get('projectName') %>
+            <%= model.get('projectDescription') %>
+            <%= model.get('projectDueDate') %>
+            <%= model.get('projectInstructions') %>
+            <button type="button" class="btn btn-primary btn-sm project-remove">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button type="button" class="btn btn-primary btn-sm project-edit">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+            <button type="button" class="btn btn-primary btn-sm project-collaborate">
+              <span class="glyphicon glyphicon-list-alt"></span>
+            </button>
+          </div>
           </div>
           </div>
         </script>
