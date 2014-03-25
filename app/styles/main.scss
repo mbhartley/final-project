@@ -31,17 +31,15 @@ body {
 /* Custom page header */
 .header {
     width: 100%;
-    box-shadow: 0px 2px 2px 2px;
-    background-color: rgb(42,88,127);
-    background: rgb(178,178,178); /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%, rgba(42,88,127,1) 64%, rgba(5,43,96,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(178,178,178,1)), color-stop(64%,rgba(42,88,127,1)), color-stop(100%,rgba(5,43,96,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(178,178,178,1) 0%,rgba(42,88,127,1) 64%,rgba(5,43,96,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2b2b2', endColorstr='#052b60',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+    box-shadow: 0px 1px 1px 1px rgb(70, 71, 73);
+    background: rgb(50,118,177); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(50,118,177,1) 0%, rgba(44,62,104,1) 0%, rgba(50,118,177,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(50,118,177,1)), color-stop(0%,rgba(44,62,104,1)), color-stop(100%,rgba(50,118,177,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(50,118,177,1) 0%,rgba(44,62,104,1) 0%,rgba(50,118,177,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(50,118,177,1) 0%,rgba(44,62,104,1) 0%,rgba(50,118,177,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(50,118,177,1) 0%,rgba(44,62,104,1) 0%,rgba(50,118,177,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(50,118,177,1) 0%,rgba(44,62,104,1) 0%,rgba(50,118,177,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3276b1', endColorstr='#3276b1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @media screen and (min-width: 768px) {
@@ -70,7 +68,7 @@ body {
 //BOOTSTRAP DEFAULT ENDS
 
 h1 {
-    color: rgb(79, 112, 141);
+    color: rgb(66, 139, 202);
     font-weight: 700;
     text-align: center;
 }
@@ -105,7 +103,7 @@ h1 {
 }
 
 .btn-primary {
-    background-color: rgb(79, 112, 141);
+    //background-color: rgb(79, 112, 141);
 }
 
 .btn {

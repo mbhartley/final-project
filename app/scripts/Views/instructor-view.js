@@ -1,18 +1,19 @@
 var InstructorView = Parse.View.extend({
 
-	welcomeInstructorTemplate: _.template($('#welcome-instructor-template').text()),
+	projectsTemplate: _.template($('#projects').text()),
 
 	initialize: function(){
 	  console.log('instructor view INITIALIZED!');
-	  //$('body').empty();
+	  $('body').empty();
 	  $('body').prepend(this.el);
 	  this.render();
 	},
 
 	render: function(){
 	  console.log('instructor view RENDERED!');
-	  var renderedWelcomeInstructorTemplate = this.welcomeInstructorTemplate({model: this.model});
-	  this.$el.html(this.welcomeInstructorTemplate);
+	  var renderedProjectsTemplate = this.projectsTemplate({model: this.model});
+	  console.log(this.model)
+	  this.$el.html(renderedProjectsTemplate);
 	}	
 });
 

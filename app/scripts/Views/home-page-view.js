@@ -9,7 +9,7 @@ var HomePageView = Parse.View.extend({
 
   initialize: function(){
   	console.log('HomePageView Initialized!');
-    //$('body').empty;
+    $('body').empty;
   	$('body').append(this.el);
   	this.render();
   },
@@ -55,7 +55,7 @@ var HomePageView = Parse.View.extend({
 	  success: function(user) {
 	    //on success, navigate away from page to instructorPage
 		router.navigate("instructorPage", {trigger: true});
-		this.destroy();
+		// this.destroy();
 	  },
 
 	  error: function(user, error) {

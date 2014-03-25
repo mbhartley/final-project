@@ -28,7 +28,7 @@
         <!--Home Page Template, including modals for login and registration-->
 
     <script type="text/template" id="home-page-template">
-
+    
         <div class="header">
           <img class="logo-img" src="/images/platform.gif"> 
         </div>
@@ -132,13 +132,13 @@
     </script>
 
         <!--Instructor View Templates-->
-        <script type="text/template" id="welcome-instructor-template">
+        <script type="text/template" id="projects">
           <div class="welcome">Welcome, (username)</div>
           <button type="button" class="btn btn-primary">LogOut</button>
           <a href="#instructorPage/createNewProject"><button type="button" class="btn btn-primary">Create New Project</button></a>
           <div class="project-pane">
           <div class="project-thumbnails">
-
+            <%= model.get('projectName') %>
           </div>
           </div>
         </script>
