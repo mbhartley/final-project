@@ -21,11 +21,13 @@ var Router = Backbone.Router.extend({
 	},
 
 	instructorPage: function(){
+		console.log('instructorPage Firing')
 	  	var createdProject = new ProjectCollection();
 	  	createdProject.fetch({
-	  	  success:function(){       
-	  	  	createdProject.each(function(createdProject){
-	  	    	new InstructorView({model: createdProject});
+	  	  success:function(createdProject){  
+	  	    console.log('success callback on fetch firing')     
+	  	  	createdProject.each(function(project){
+	  	      new InstructorView({model: project});
 	  	  	})
 	  	  }
 	  	})
