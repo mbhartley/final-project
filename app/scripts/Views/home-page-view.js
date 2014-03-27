@@ -9,7 +9,7 @@ var HomePageView = Parse.View.extend({
 
   initialize: function(){
   	console.log('HomePageView Initialized!');
-    $('body').empty;
+    $('body').empty();
   	$('body').append(this.el);
   	this.render();
   },
@@ -43,28 +43,28 @@ var HomePageView = Parse.View.extend({
 
   registerInstructor: function(){
   	console.log('Instructor Registration is firing!');
-	var user = new Parse.User();
+  	var user = new Parse.User();
 
-  //set user input values as Parse object values
-	user.set('username', $('.js-instructor-username').val());
-	user.set('password', $('.js-instructor-password').val());
-	user.set('email', 	 $('.js-instructor-email').val());
+    //set user input values as Parse object values
+  	user.set('username', $('.js-instructor-username').val());
+  	user.set('password', $('.js-instructor-password').val());
+  	user.set('email', 	 $('.js-instructor-email').val());
 
-	//'signUp' must be used in place of 'save'; save will be used for subsequent edits only
-	user.signUp(null, {
-	  success: function(user) {
-	    //on success, navigate away from page to instructorPage
-		router.navigate("instructorPage", {trigger: true});
-	  },
+  	//'signUp' must be used in place of 'save'; save will be used for subsequent edits only
+  	user.signUp(null, {
+  	  success: function(user) {
+  	    //on success, navigate away from page to instructorPage
+  		router.navigate("instructorPage", {trigger: true});
+  	  },
 
-	  error: function(user, error) {
-	    //on duplicate username entered, error message is appended via Bootstrap 'has error' state
-		console.log(error);
-		$('.js-instructor-username').val('');
-		$('.create-username').addClass('has-error');
-		$('.error-message').append('Sorry,' + ' ' + error.message + '.' + ' ' + 'Please try again.');
-	  }
-	});
+  	  error: function(user, error) {
+  	    //on duplicate username entered, error message is appended via Bootstrap 'has error' state
+  		console.log(error);
+  		$('.js-instructor-username').val('');
+  		$('.create-username').addClass('has-error');
+  		$('.error-message').append('Sorry,' + ' ' + error.message + '.' + ' ' + 'Please try again.');
+  	  }
+  	});
   }
 
 })

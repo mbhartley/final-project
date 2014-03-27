@@ -17,6 +17,7 @@
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
         <!-- endbuild -->
         <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
@@ -52,7 +53,7 @@
               <h1>Instructors</h1>
               <p class="summary">American Apparel aesthetic craft beer Intellect yum. Fap Tumblr flexitarian, Shoreditch Cosby sweater gluten-free Bushwick seitan pickled.</p>
               <br>
-              <button type="button" class="btn btn-primary login-button" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>                
+              <button type="button" class="btn btn-primary btn-md login-button" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>                
               <br>
               <br>     
               <button type="button" class="btn btn-primary login-button" data-toggle="modal" data-target=".js-instr-reg-modal">Register Now</button> 
@@ -65,7 +66,7 @@
               <h1>Students</h1>
               <p class="summary">American Apparel aesthetic craft beer Intellect yum. Fap Tumblr flexitarian, Shoreditch Cosby sweater gluten-free Bushwick seitan pickled.</p>
               <br>
-              <button type="button" class="btn btn-primary login-button">Student Login</button>
+              <button type="button" class="btn btn-primary btn-md login-button">Student Login</button>
               <br>
               <br>
               <button type="button" class="btn btn-primary login-button" data-toggle="modal">Register Now</button>           
@@ -133,7 +134,7 @@
 
     </script>
 
-        <!--Instructor View Templates-->
+        <!--Instructor View Template-->
         <script type="text/template" id="projects">
           <div class="header-sm">
             <img class="logo-img-sm" src="/images/platform.gif"> 
@@ -153,7 +154,7 @@
         <!--Rendered Project Pane Template-->
         <script type="text/template" id="renderedProject">       
           <div class="project-thumbnails">
-            <h4><%= model.get('projectName') %></h4>
+            <h3><%= model.get('projectName') %></h3>
             <ul class="project-buttons">          
               <button type="button" class="btn btn-primary btn-sm project-remove" data-toggle="tooltip" data-placement="top" title="Delete Project">  
                 <span class="glyphicon glyphicon-remove"></span>
@@ -165,8 +166,8 @@
                 <span class="glyphicon glyphicon-list-alt"></span>
               </button> 
             </ul>
-            <h5><%= model.get('projectDescription') %></h5>
-            <div class='due-date'>Project Due Date:   <%= model.get('projectDueDate') %></div>
+            <h4><%= model.get('projectDescription') %></h4>
+            <h5>Project Due Date:   <%= model.get('projectDueDate') %></h5>
             <div class='instructions-body'><%= model.get('projectInstructions') %></div>
           </div>
         </script> 
@@ -198,8 +199,30 @@
           </div>          
           <button type="button" class="btn btn-primary js-save-new-project">Save</button>
         </form>
-
         </script>
+
+        <!--Collaboration View Template-->
+        <script type="text/template" id="collaboration-view-template">
+        <div class="header-sm">
+          <img class="logo-img-sm" src="/images/platform.gif"> 
+        </div>
+        <div class="container">
+          <div class="col-lg-6 message-board text-center">
+            <h3>Welcome to the Platform Message Board</h3>
+            <input type="text" class="form-control js-message" placeholder="Enter message here">
+            <div class="message-pane"></div>
+          </div>
+        </div>
+        </script>
+
+        <!--Message Pane Template-->
+        <script type="text/template" id="message-pane">
+          <%= model.get('newMessage') %>
+          <%= model.get('createdAt') %>
+        </script>
+
+
+
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
@@ -232,17 +255,21 @@
         <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
         <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
         <script src="bower_components/sass-bootstrap/js/tab.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/router.js"></script>
         <script src="scripts/views/project-pane-view.js"></script>
+        <script src="scripts/views/render-messages-view.js"></script>
         <script src="scripts/views/home-page-view.js"></script>
         <script src="scripts/views/instructor-view.js"></script>
         <script src="scripts/views/student-view.js"></script>
         <script src="scripts/views/create-project-view.js"></script>
         <script src="scripts/views/collaboration-view.js"></script>
         <script src="scripts/project-collection.js"></script>
+        <script src="scripts/message-collection.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

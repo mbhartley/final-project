@@ -3,12 +3,13 @@ var ProjectPaneView = Parse.View.extend({
 	projectsPaneTemplate: _.template($('#renderedProject').text()),
 
 	events: {
-	  'click .project-remove': 'removeProject',
-	  'click .project-edit'  : 'editProject',
+	  'click .project-remove'			 : 'removeProject',
+	  'click .project-edit'  			 : 'editProject',
+	  'click .project-collaborate' : 'goToCollaboratePage',
 	},
 
 	initialize: function(){
-		$('.project-pane').prepend(this.el);
+	  $('.project-pane').prepend(this.el);
 	  this.render();
 	},
 
@@ -32,7 +33,12 @@ var ProjectPaneView = Parse.View.extend({
 
 	editProject: function(){
 		console.log('editProject firing!');
-		window.router.navigate("createNewProjectPage", {trigger: true});
+		window.router.navigate('instructorPage/createNewProject', {trigger: true});
+	},
+
+	goToCollaboratePage: function(){
+		new CollaborationView();
+	  window.router.navigate('instructorPage/:collaboration', {trigger: true});
 	}
 
 
