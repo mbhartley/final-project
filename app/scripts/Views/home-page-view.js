@@ -45,7 +45,7 @@ var HomePageView = Parse.View.extend({
   	console.log('Instructor Registration is firing!');
 	var user = new Parse.User();
 
-    //set user input values as Parse object values
+  //set user input values as Parse object values
 	user.set('username', $('.js-instructor-username').val());
 	user.set('password', $('.js-instructor-password').val());
 	user.set('email', 	 $('.js-instructor-email').val());

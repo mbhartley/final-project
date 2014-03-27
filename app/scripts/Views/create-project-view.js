@@ -3,7 +3,7 @@ var CreateProjectView = Parse.View.extend ({
 	createNewProjectTemplate:  _.template($('#create-new-project-template').text()),
 
 	events: {
-		'click .js-save-new-project': 'saveProject'
+	  'click .js-save-new-project': 'saveProject',
 	},
 
 	initialize: function(){
@@ -28,7 +28,8 @@ var CreateProjectView = Parse.View.extend ({
 	  project.set('projectDescription', $('.js-project-description').val()),
 	  project.set('projectDueDate', $('.js-project-due-date').val()),
 	  project.set('projectInstructions', $('.js-project-instructions').val()),
-	  project.setACL(new Parse.ACL(Parse.User.current())),
+	  project.set('instructor', Parse.User.current()),
+	  project.setACL(new Parse.ACL(Parse.User.current())),	
 	  //the object and its key-value pairs are saved to Parse
 	  project.save(null, {    
 	    success: function(project) {
