@@ -22,8 +22,7 @@ var CollaborationView = Parse.View.extend ({
 
 	      var message = new Message();
 	      	message.set('newMessage', $('.js-message').val()),
-	      	message.set('instructor', Parse.User.current()),
-		      message.setACL(new Parse.ACL(Parse.User.current())),	      
+	      	message.set('instructor', Parse.User.current()),	      
 
 	      message.save(null, {    
 	        success: function(project) {

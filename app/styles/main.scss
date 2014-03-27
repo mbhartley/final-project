@@ -205,9 +205,9 @@ h1 {
 }
 
 .message-pane {
-    border: 1px solid black;
+    //border: 1px solid black;
     width: 100%;
-    height: 100%;
+    //height: 100%;
     border-radius: 6px;
     margin: 20px 0 20px 0;
 
@@ -220,6 +220,11 @@ h1 {
     margin: 8px;
     padding: 6px;
     border-radius: 6px;
+}
+
+.shared-docs {
+    width: 100%;
+    border: 1px solid black;
 }
 
 
