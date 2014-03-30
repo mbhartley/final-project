@@ -9,7 +9,15 @@ var CollaborationView = Parse.View.extend ({
 	initialize: function(){
 		$('body').empty();
 		$('body').prepend(this.el);
-	    this.render();
+    this.render();
+  	var newMessage = new MessageCollection();
+      newMessage.fetch({
+        success:function(newMessage){      
+        	newMessage.each(function(project){
+            new RenderMessagesView({model: project});
+        	})
+        }
+      })
 	},
 
 	render: function(){
