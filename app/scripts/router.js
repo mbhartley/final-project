@@ -2,11 +2,11 @@ var Router = Backbone.Router.extend({
 
 	routes: {
 
-		''                  			  			: 'homePage',
-		'instructorPage'    			  			: 'instructorPage',
-		//'studentPage'       			  			: 'studentPage',
-		'instructorPage/createNewProject' : 'createNewProjectPage',
-		'instructorPage/:collaboration'   : 'collaborationPage',
+		''                  			  	: 'homePage',
+		'instructorPage'    			  	: 'instructorPage',
+		//'studentPage'       			  	: 'studentPage',
+		'instructorPage/createNewProject'   : 'createNewProjectPage',
+		'instructorPage/:collaboration'     : 'collaborationPage',
 		//'studentPage/: viewProjectPage'   : 'viewProjectPage',
 		//'studentPage/: collaboration'	  	: 'collaborationPage',
 
@@ -39,6 +39,6 @@ var Router = Backbone.Router.extend({
     },
 
     collaborationPage: function(){
-    	new CollaborationView();
+      new CollaborationView();
     }
 })

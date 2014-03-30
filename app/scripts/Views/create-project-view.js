@@ -42,9 +42,9 @@ var CreateProjectView = Parse.View.extend ({
 	      
 	        
 	    },
-	        error: function(project, error) {
-	          alert('Failed to create new object, with error code: ' + error.description);
-	        }
+        error: function(project, error) {
+          alert('Failed to create new object, with error code: ' + error.description);
+        }
 	  })		  
 	}
 });

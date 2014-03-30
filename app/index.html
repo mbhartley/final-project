@@ -148,9 +148,6 @@
           </div>
         </script>
 
-
-
-
         <!--Rendered Project Pane Template-->
         <script type="text/template" id="renderedProject">       
           <div class="project-thumbnails">
@@ -180,15 +177,15 @@
         <form role="form" class="create-new-project-pane">
           <div class="form-group">
             <label for="projectName">Project Name</label>
-            <input type="text" class="form-control js-project-name" id="exampleInputEmail1" placeholder="Enter project name">
+            <input type="text" class="form-control js-project-name" placeholder="Enter project name">
           </div>
           <div class="form-group">
             <label for="projectDescription">Project Description</label>
-            <input type="text" class="form-control js-project-description" id="exampleInputPassword1" placeholder="Enter Project Description">
+            <input type="text" class="form-control js-project-description" placeholder="Enter Project Description" maxlength="80">
           </div>
           <div class="form-group">
             <label for="projectDueDate">Project Due Date</label>
-            <input type="date" class="form-control js-project-due-date" id="exampleInputPassword1">
+            <input type="date" class="form-control js-project-due-date">
           </div>
           <label for="projectInstructions">Project Instructions</label>
           <textarea class="form-control js-project-instructions" rows="10" placeholder="Enter Project Instructions"></textarea>
@@ -218,7 +215,6 @@
         <!--Message Pane Template-->
         <script type="text/template" id="message-pane">
           <%= model.get('newMessage') %>
-          <%= model.get('createdAt') %>
         </script>
 
 

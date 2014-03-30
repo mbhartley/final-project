@@ -11,19 +11,20 @@ var ProjectPaneView = Parse.View.extend({
 	initialize: function(){
 	  $('.project-pane').prepend(this.el);
 	  this.render();
+	  //this.listenTo(this.model, "change", this.render);
 	},
 
 	render: function(){
-		var renderedProjectsPaneTemplate = this.projectsPaneTemplate({model: this.model});
+	 	var renderedProjectsPaneTemplate = this.projectsPaneTemplate({model: this.model});
 	  this.$el.html(renderedProjectsPaneTemplate);
 	},
 
 	removeProject: function(){
 	  console.log('removeProject Firing!');
+	  this.$el.html('');
 	  this.model.destroy({
 	    success: function(project) {
 	      console.log('delete successful')
-	      $('.project-thumbnails').empty();
 	    },
 	    error: function(project, error) {
 	      console.log('The delete failed')	      
@@ -32,12 +33,12 @@ var ProjectPaneView = Parse.View.extend({
 	},
 
 	editProject: function(){
-		console.log('editProject firing!');
-		window.router.navigate('instructorPage/createNewProject', {trigger: true});
+	  console.log('editProject firing!');
+	  window.router.navigate('instructorPage/createNewProject', {trigger: true});
 	},
 
 	goToCollaboratePage: function(){
-		new CollaborationView();
+	  new CollaborationView();
 	  window.router.navigate('instructorPage/:collaboration', {trigger: true});
 	}
 
