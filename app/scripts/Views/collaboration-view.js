@@ -28,21 +28,22 @@ var CollaborationView = Parse.View.extend ({
 	sendMessage: function(e){
 		if ( e.which === 13 ) {
 
-    var message = new Message();
+      var message = new Message();
       message.set('newMessage', $('.js-message').val()),
+      message.set('date', Date.now());
       message.set('instructor', Parse.User.current()),	      
 
       message.save(null, {    
         success: function(project) {
-        	var newMessage = new MessageCollection();
-            newMessage.fetch({
-              success:function(newMessage){      
-              	newMessage.each(function(project){
-                  new RenderMessagesView({model: project});
-              	})
-              }
-            })
-          $('.js-message').val('');  
+        	var message = new MessageCollection();
+          $('.js-message').val('');
+          message.fetch({
+            success:function(newMessage){  
+            	//message.each(function(project){
+                new RenderMessagesView({model: project});
+            	//})
+            }
+          })    
         },
         error: function(project, error) {
           alert('Failed to create new object, with error code: ' + error.description);

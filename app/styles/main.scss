@@ -129,6 +129,7 @@ h1 {
 
 .login-button {
     margin-left: 144px;
+    width: 120px;
 }
 
 .summary{
@@ -204,16 +205,16 @@ h1 {
     margin: 20px 0 20px 0;
 }
 
+// .message-pane {
+//     //border: 1px solid black;
+//     width: 100%;
+//     //height: 100%;
+//     border-radius: 6px;
+//     margin: 20px 0 20px 0;
+
+// }
+
 .message-pane {
-    //border: 1px solid black;
-    width: 100%;
-    //height: 100%;
-    border-radius: 6px;
-    margin: 20px 0 20px 0;
-
-}
-
-.rendered-message {
     font-size: 16px;
     text-align: left;
     border: 1px solid black;
@@ -222,9 +223,26 @@ h1 {
     border-radius: 6px;
 }
 
-.shared-docs {
-    width: 100%;
-    border: 1px solid black;
+.single-message {
+    width: 794px;
+    height: 40px;
+    background-color: rgb(211, 207, 207);
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.rendered-message {
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.rendered-date {
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    float: right;
+    margin-right: 8px;
 }
 
 

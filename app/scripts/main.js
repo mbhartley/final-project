@@ -6,8 +6,6 @@ $(function(){
 
   Backbone.history.start();
 
-
-
 });
 
 
