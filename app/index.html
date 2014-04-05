@@ -88,7 +88,7 @@
                 </div>
                 <div class="create-password">
                   <label class="control-label" for="inputError1">Create a Password</label>
-                  <input type="text" class="form-control js-instructor-password" id="inputError1">
+                  <input type="password" class="form-control js-instructor-password" id="inputError1">
                 </div>
                 <div class="create-email">
                   <label class="control-label" for="inputError1">Enter Your Email Address</label>
@@ -211,18 +211,14 @@
               </div>
             </div>
           </div>
-
         </script>
 
         <!--Message Pane Template-->
         <script type="text/template" id="message-pane">
           <div class="single-message">
-            <div class="rendered-message">
-            <%= model.get('newMessage') %>
-            </div>
-            <div class="rendered-date">
-            <%= (new Date( model.get('date') )).toLocaleString() %>
-            </div>
+            <div class="sender"> <%= model.get('sender') %> </div>
+            <div class="rendered-date"> <%= (new Date( model.get('date') )).toLocaleString() %> </div>
+            <div class="rendered-message"> <%= model.get('newMessage') %> </div>
           </div>
         </script>
 

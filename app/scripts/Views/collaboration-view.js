@@ -7,6 +7,7 @@ var CollaborationView = Parse.View.extend ({
 	},
 
 	initialize: function(){
+    console.log (Parse.User.current().attributes.username);
 		$('body').empty();
 		$('body').prepend(this.el);
     this.render();
@@ -31,7 +32,9 @@ var CollaborationView = Parse.View.extend ({
       var message = new Message();
       message.set('newMessage', $('.js-message').val()),
       message.set('date', Date.now());
-      message.set('instructor', Parse.User.current()),	      
+      message.set('instructor', Parse.User.current()),
+      message.set('sender', Parse.User.current().attributes.username)	      
+
 
       message.save(null, {    
         success: function(project) {
