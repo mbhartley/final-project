@@ -1,0 +1,171 @@
+<!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class=no-js><!--<![endif]--><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>final project</title><meta name=description content=""><meta name=viewport content="width=device-width"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel=stylesheet href=styles/vendor.css><link rel=stylesheet href=styles/b1e1836d.main.css><script src=bower_components/modernizr/modernizr.js></script><body><!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]--><!--Home Page Template, including modals for login and registration--><script type=text/template id=home-page-template><div class="header">
+          <img class="logo-img" src="/images/db333244.platform.gif"> 
+        </div>
+          
+        <div class="container"> 
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="login-icons-viewer">
+            
+            <div class="col-lg-6">
+              <img src="/images/c13cbc45.teacher2.gif" class="user-icon">
+              <br>
+              <br>  
+              <h2>Instructors</h2>
+              <p class="summary">Create and share projects with ease. Collaborate with students in real time as they progress through projects together.</p>
+              <br>
+              <button type="button" class="btn btn-primary btn-md login-button" data-toggle="modal" data-target=".js-instr-login-modal">Instructor Login</button>                
+              <br>
+              <br>     
+              <button type="button" class="btn btn-primary login-button" data-toggle="modal" data-target=".js-instr-reg-modal">Register Now</button> 
+            </div>
+            
+            <div class="col-lg-6">
+              <img src="/images/39e1fb99.student2.gif" class="user-icon">
+              <br>
+              <br>
+              <h2>Students</h2>
+              <p class="summary">Easily join projects as they are created. Collaborate with instructors and other students to learn and create together.</p>
+              <br>
+              <button type="button" class="btn btn-primary btn-md login-button">Student Login</button>
+              <br>
+              <br>
+              <button type="button" class="btn btn-primary login-button" data-toggle="modal">Register Now</button>           
+            </div>
+
+          </div> 
+        </div>
+
+        <!--INSTRUCTOR REGISTER MODAL-->
+        <div class="modal fade js-instr-reg-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Thank you for registering as an Instructor!</h4>
+              </div>
+              <div class="modal-body register-modal-body">
+                <div class="create-username">
+                  <label class="control-label" for="inputError1">Create a New Username</label>
+                  <div class="error-message"></div>
+                  <input type="text" class="form-control js-instructor-username" id="inputError1">
+                </div>
+                <div class="create-password">
+                  <label class="control-label" for="inputError1">Create a Password</label>
+                  <input type="password" class="form-control js-instructor-password" id="inputError1">
+                </div>
+                <div class="create-email">
+                  <label class="control-label" for="inputError1">Enter Your Email Address</label>
+                  <input type="text" class="form-control js-instructor-email" id="inputError1">
+                </div>  
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default js-close-instructor-registration" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary js-save-instructor-registration">Save</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!--INSTRUCTOR LOGIN MODAL-->       
+        <div class="modal fade js-instr-login-modal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Welcome to Platform!<br>Enter your username and password below.</h4>
+              </div>
+              <div class="modal-body">
+                <div class="enter-username">
+                  <label class="control-label" for="inputError1">Enter Username</label>
+                  <div class="error-message"></div>
+                  <input type="text" class="form-control js-instructor-login-username" id="inputError1">
+                </div>
+                <div class="enter-password">
+                  <label class="control-label" for="inputError1">Enter Password</label>
+                  <input type="password" class="form-control js-instructor-login-password" id="inputError1">
+                  <div class="login-error-message"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default js-close-instructor-login" data-dismiss="modal">Close</button>                                 
+                  <button type="button" class="btn btn-primary js-instructor-login">Login</button>                     
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal</script><!--Instructor View Template--><script type=text/template id=projects><div class="header-sm">
+            <img class="logo-img-sm" src="/images/db333244.platform.gif"> 
+          </div>     
+          <div class="container">  
+            <div class="welcome">Welcome, (username)</div>                    
+            <div class="new-project-button">
+              <a href="#instructorPage/createNewProject"><button type="button" class="btn btn-primary">Create New Project</button></a>
+            </div>
+            <div class="project-pane"></div>
+          </div></script><!--Rendered Project Pane Template--><script type=text/template id=renderedProject><div class="project-thumbnails">
+            <h3 id="js-edit-project-name"><%= model.get('projectName') %></h3>
+            <ul class="project-buttons">          
+              <button type="button" class="btn btn-primary btn-sm project-remove" data-toggle="tooltip" data-placement="top" title="Delete Project">  
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+              <button type="button" class="btn btn-primary btn-sm project-edit" data-toggle="tooltip" data-placement="top" title="Edit Project">
+                <span class="glyphicon glyphicon-edit"></span>
+              </button>
+              <button type="button" class="btn btn-primary btn-sm project-collaborate" data-toggle="tooltip" data-placement="top" title="Collaborate">
+                <span class="glyphicon glyphicon-list-alt"></span>
+              </button> 
+            </ul>
+            <h4><%= model.get('projectDescription') %></h4>
+            <h5>Project Due Date:   <%= model.get('projectDueDate') %></h5>
+            <div class='instructions-body'><%= model.get('projectInstructions') %></div>
+          </div></script><!--Create Project View Template--><script type=text/template id=create-new-project-template><div class="panel panel-primary create-new-project-header">
+            <div class="panel-heading">Welcome to Platform Create a Project Page</div>
+          </div>
+          <form role="form" class="create-new-project-pane">
+            <div class="form-group">
+              <label for="projectName">Project Name</label>
+              <input type="text" class="form-control js-project-name" placeholder="Enter project name">
+            </div>
+            <div class="form-group">
+              <label for="projectDescription">Project Description</label>
+              <input type="text" class="form-control js-project-description" placeholder="Enter Project Description" maxlength="80">
+            </div>
+            <div class="form-group">
+              <label for="projectDueDate">Project Due Date</label>
+              <input type="date" class="form-control js-project-due-date">
+            </div>
+            <label for="projectInstructions">Project Instructions</label>
+            <textarea class="form-control js-project-instructions" rows="10" placeholder="Enter Project Instructions"></textarea>
+            <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">Example block-level help text here.</p>
+            </div>          
+            <button type="button" class="btn btn-primary js-save-new-project">Save</button>
+          </form></script><!--Collaboration View Template--><script type=text/template id=collaboration-view-template><div class="header-sm">
+            <img class="logo-img-sm" src="/images/db333244.platform.gif"> 
+          </div>
+
+          <div class="container">
+           <div class="col-lg-6 message-board text-center">
+              <h3>Welcome to the Platform Message Board</h3>
+              <input type="text" class="form-control js-message" placeholder="Enter message here">
+              <div class="message-pane">
+              </div>
+            </div>
+          </div></script><!--Message Pane Template--><script type=text/template id=message-pane><div class="single-message">
+            <div class="sender"> <%= model.get('sender') %> </div>
+            <div class="rendered-date"> <%= (new Date( model.get('date') )).toLocaleString() %> </div>
+            <div class="rendered-message"> <%= model.get('newMessage') %> </div>
+          </div></script><script src=scripts/022f5ef7.vendor.js></script><script src=//www.parsecdn.com/js/parse-1.2.17.min.js></script><!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');</script><script src=scripts/aaf74903.plugins.js></script><script src=scripts/bef69469.main.js></script>
